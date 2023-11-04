@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
-
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+import "@lrnwebcomponents/accent-card/accent-card.js";
+import "@lrnwebcomponents/meme-maker/meme-maker.js";
+import "clothing-card/src/clothing-card.js";
 
 class CardsApp extends LitElement {
   static properties = {
@@ -58,29 +59,9 @@ class CardsApp extends LitElement {
   render() {
     return html`
       <main>
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
-
-        <p>Edit <code>src/CardsApp.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
-      </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
+        <meme-maker alt="Cat stalking a small toy" image-url="https://cdn2.thecatapi.com/images/9j5.jpg" top-text="I bring you" bottom-text="the death"></meme-maker>
+        <clothing-card clothing="Testing t-shirt" information="Get these now!"></clothing-card>
+    </main>
     `;
   }
 }
